@@ -10,6 +10,6 @@ import Foundation
 struct Death: Decodable {
     let character: String
     let image: URL
-    let detail: String
+    let details: String
     let lastWords: String
 }
