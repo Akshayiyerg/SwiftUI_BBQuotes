@@ -55,6 +55,21 @@ struct CharacterView: View {
                         
                         Divider()
                         
+                        Text("Nicknames:")
+                        
+                        if character.aliases.count > 0 {
+                            ForEach(character.aliases, id: \.self) { aliase in
+                                Text("•\(aliase)")
+                                    .font(.subheadline)
+                            }
+                        } else {
+                            Text("None")
+                                .font(.subheadline)
+                        }
+                        
+                        Divider()
+                        
+                        
                         
                     }
                     .frame(width: geo.size.width/1.25, alignment: .leading)
