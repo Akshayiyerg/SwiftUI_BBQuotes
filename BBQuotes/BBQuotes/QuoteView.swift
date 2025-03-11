@@ -74,7 +74,7 @@ struct QuoteView: View {
                     
                     Button {
                         Task { // Task is used run asyc items in sync envinorments
-                            await vm.getData(for: show)
+                            await vm.getQuoteData(for: show)
                         }
                         
                     } label: {
