@@ -118,5 +118,5 @@ struct CharacterView: View {
 }
 
 #Preview {
-    CharacterView(character: ViewModal().character, show: "Breaking Bad")
+    CharacterView(character: ViewModal().character, show: Constants.bbName)
 }

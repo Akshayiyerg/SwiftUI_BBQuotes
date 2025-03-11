@@ -94,6 +94,7 @@ struct QuoteView: View {
             .frame(width: geo.size.width, height: geo.size.height) // this is to make the centre of image visible for better understanding go to live mode and uncomment this line
         }
         .ignoresSafeArea()
+        .toolbarBackgroundVisibility(.visible, for: .tabBar)
         .sheet(isPresented: $showCharacter) {
             CharacterView(character: vm.character, show: show)
         }
@@ -101,6 +102,6 @@ struct QuoteView: View {
 }
 
 #Preview {
-    QuoteView(show: "Better Call Saul")
+    QuoteView(show: Constants.bcsName)
         .preferredColorScheme(.dark)
 }
