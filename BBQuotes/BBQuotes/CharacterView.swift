@@ -13,9 +13,9 @@ struct CharacterView: View {
     
     var body: some View {
         GeometryReader { geo in
+            ScrollViewReader { proxy in
             ZStack(alignment: .top) {
-                ScrollViewReader { proxy in
-                    Image(show.lowercased().replacingOccurrences(of: " ", with: ""))
+                    Image(show.removeCaseAndSpace())
                         .resizable()
                         .scaledToFit()
                     
@@ -102,12 +102,12 @@ struct CharacterView: View {
                                     }
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .id(1)
                             }
                             .tint(.primary)
                         }
                         .frame(width: geo.size.width/1.25, alignment: .leading)
                         .padding(.bottom, 50)
+                        .id(1)
                     }
                     .scrollIndicators(.hidden)
                 }
