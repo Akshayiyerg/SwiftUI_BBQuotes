@@ -73,7 +73,7 @@ struct FetchService {
     
     func fetchEpisode(from show: String) async throws -> Episode? {
         
-        let epiosdeURL = baseURL.appending(path: "episodes")
+        let episodeURL = baseURL.appending(path: "episodes")
         let fetchURL = episodeURL.appending(queryItems: [URLQueryItem(name: "production", value: show)])
         
         let (data, response) = try await URLSession.shared.data(from: fetchURL)

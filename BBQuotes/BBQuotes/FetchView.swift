@@ -1,5 +1,5 @@
 //
-//  QuoteView.swift
+//  FetchView.swift
 //  BBQuotes
 //
 //  Created by Akshay  on 2025-02-17.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuoteView: View {
+struct FetchView: View {
     let vm = ViewModal()
     let show: String
     
@@ -32,7 +32,7 @@ struct QuoteView: View {
                         case .fetching:
                             ProgressView()
                             
-                        case .success:
+                        case .successQuote:
                             Text("\(vm.quote.quote)\"")
                                 .minimumScaleFactor(0.5)
                                 .multilineTextAlignment(.center)
@@ -64,28 +64,49 @@ struct QuoteView: View {
                                 showCharacter.toggle()
                             }
                             
+                        case .successEpisode:
+                            EpisodeView(episode: vm.episode)
                             
                         case .failed(let error):
                             Text(error.localizedDescription)
                         }
                         
-                        Spacer()
+                        Spacer(minLength: 20)
                     }
                     
-                    Button {
-                        Task { // Task is used run asyc items in sync envinorments
-                            await vm.getQuoteData(for: show)
+                    HStack {
+                        Button {
+                            Task { // Task is used run asyc items in sync envinorments
+                                await vm.getQuoteData(for: show)
+                            }
+                            
+                        } label: {
+                            Text("Get Random Quote")
+                                .font(.title3)
+                                .foregroundStyle(.white)
+                                .padding()
+                                .background(Color("\(show.removeSpaces())Button"))
+                                .clipShape(.rect(cornerRadius: 7))
+                                .shadow(color: Color("\(show.removeSpaces())Shadow"), radius: 10)
                         }
                         
-                    } label: {
-                        Text("Get Random Quote")
-                            .font(.title)
-                            .foregroundStyle(.white)
-                            .padding()
-                            .background(Color("\(show.removeSpaces())Button"))
-                            .clipShape(.rect(cornerRadius: 7))
-                            .shadow(color: Color("\(show.removeSpaces())Shadow"), radius: 10)
-                    }
+                        Spacer()
+                        
+                        Button {
+                            Task { // Task is used run asyc items in sync envinorments
+                                await vm.getEpiosdeData(for: show)
+                            }
+                            
+                        } label: {
+                            Text("Get Random Episode")
+                                .font(.title3)
+                                .foregroundStyle(.white)
+                                .padding()
+                                .background(Color("\(show.removeSpaces())Button"))
+                                .clipShape(.rect(cornerRadius: 7))
+                                .shadow(color: Color("\(show.removeSpaces())Shadow"), radius: 10)
+                        }
+                    }.padding(.horizontal, 30)
                     
                     Spacer(minLength: 95)
                 }
@@ -102,6 +123,6 @@ struct QuoteView: View {
 }
 
 #Preview {
-    QuoteView(show: Constants.bcsName)
+    FetchView(show: Constants.bcsName)
         .preferredColorScheme(.dark)
 }

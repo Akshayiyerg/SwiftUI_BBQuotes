@@ -13,7 +13,8 @@ class ViewModal {
     enum FetchStatus {
         case notStarted
         case fetching
-        case success
+        case successQuote
+        case successEpisode
         case failed(error: Error)
     }
     
@@ -49,7 +50,7 @@ class ViewModal {
             
             character.death = try await fetcher.fetchDeath(for: character.name)
             
-            status = .success
+            status = .successQuote
         } catch {
             status = .failed(error: error)
         }
@@ -63,7 +64,7 @@ class ViewModal {
                 episode = unwrappedEpisode
             }
             
-            status = .success
+            status = .successEpisode
         } catch {
             status = .failed(error: error)
         }
