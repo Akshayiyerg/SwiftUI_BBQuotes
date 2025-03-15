@@ -13,12 +13,16 @@ The "BB Quotes" app is an iOS application that immerses users in the universes o
 
 </div>
 
-## Better Call
+## Better Call Saul
 <div>
+<img src="_Demo/mockUp3.png" width="250"/>&nbsp;&nbsp;&nbsp;
+<img src="_Demo/mockUp4.png" width="250"/>&nbsp;&nbsp;&nbsp;
 </div>
 
-## Breaking Bad
+## El Camino
 <div>
+<img src="_Demo/mockUp5.png" width="250"/>&nbsp;&nbsp;&nbsp;
+<img src="_Demo/mockUp6.png" width="250"/>&nbsp;&nbsp;&nbsp;
 </div>
 
 
