@@ -7,6 +7,7 @@ The "BB Quotes" app is an iOS application that immerses users in the universes o
 ## Breaking Bad
 <div>
 <img src="_Demo/mockUp1.png" width="250"/>&nbsp;&nbsp;&nbsp;
+  padding: 10px;
 <img src="_Demo/mockUp2.png" width="250"/>&nbsp;&nbsp;&nbsp;
 <img src="_Demo/mockUp7.png" width="250"/>&nbsp;&nbsp;&nbsp;
 <img src="_Demo/mockUp8.png" width="250"/>&nbsp;&nbsp;&nbsp;
